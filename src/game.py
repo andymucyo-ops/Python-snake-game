@@ -1,6 +1,4 @@
 
-
-
 class Game:
 
     def __init__(self,height: int,width: int) -> None:
@@ -25,7 +23,7 @@ class Game:
 
     def render(self):
 
-        matrix = self.board_matrix()
+        matrix: list[list] = self.board_matrix()
 
         for row in range(self.height):
             # print(row)
@@ -54,13 +52,20 @@ class Game:
                         # print(f'{col} middle col')
                     # else:
                     #     matrix[row][col] = "+"
-                    #
-           
         return matrix
-        
+    
+    def display_print(self):
+
+        board: list[list] = game.render()
+
+        for line in board:
+            for col in line:
+                print(col, end='')
+            print('')
+
+
 
 if __name__ == '__main__' :
     
-    game = Game(8,4)
-
-    print(game.render())
+    game = Game(8,16)
+    game.display_print()
