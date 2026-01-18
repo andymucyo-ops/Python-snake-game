@@ -24,21 +24,11 @@ wheels/
 .installed.cfg
 *.egg
 
-# Virtual environments
-venv/
-env/
-ENV/
-.venv
-.env
-
 # IDE specific files
-.vscode/
 .idea/
 *.swp
 *.swo
 *~
-.project
-.pydevproject
 .settings/
 
 # OS specific files
