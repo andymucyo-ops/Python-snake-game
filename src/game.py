@@ -67,6 +67,6 @@ class Game:
 
 if __name__ == '__main__' :
     
-    game = Game(8,16)
+    game = Game(16,32)
 
     game.display_print()
