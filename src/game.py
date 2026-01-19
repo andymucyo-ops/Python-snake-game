@@ -5,7 +5,7 @@ class Game:
         self.height = height
         self.width = width
 
-    def board_matrix(self):
+    def board_matrix(self) -> list[list]:
         empty_board: list[list] = []
 
         for line in range(self.height):
@@ -21,7 +21,7 @@ class Game:
         # print(f'Width: {self.width}')
         return empty_board
 
-    def render(self):
+    def render(self) -> list[list[str]]:
 
         matrix: list[list] = self.board_matrix()
 
@@ -54,7 +54,7 @@ class Game:
                     #     matrix[row][col] = "+"
         return matrix
     
-    def display_print(self):
+    def display_print(self) -> None:
 
         board: list[list] = game.render()
 
