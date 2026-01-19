@@ -81,12 +81,12 @@ class Game:
 
         player_input: str = input("Please enter your move (w = UP, s = DOWN, a = LEFT, d = RIGHT: ").lower()
         
-        n: int = 0
-        
-        while n < 3:    
+        while True:    
             if player_input not in moves.keys():
                 print("Please enter w, a, s or d to move!")
 
+                player_input: str = input("Please enter your move (w = UP, s = DOWN, a = LEFT, d = RIGHT: ").lower()
+        
             else:
                 x_coordinate: int = snake.head()[0] + moves[player_input][0]
                 y_coordinate: int = snake.head()[1] + moves[player_input][1]
@@ -100,7 +100,6 @@ class Game:
 
                 player_input: str = input("Next move: ")
 
-                n += 1
 
 
 
