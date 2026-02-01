@@ -5,7 +5,7 @@ from os import system
 from src import game, snake, apple # noqa: F401
 
 #initial game print to welcome the player
-welcome_msg: Figlet = Figlet(font = "larry3d",)
+welcome_msg: Figlet = Figlet(font = "larry3d", justify= "center")
 
 print(welcome_msg.renderText("TERMINAL SNAKE GAME"))
 
