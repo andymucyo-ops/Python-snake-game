@@ -79,40 +79,42 @@ class Game:
         # print(f'first snake position is {snake.body}')
 
         player_input: str = input("Please enter your move (w = UP, s = DOWN, a = LEFT, d = RIGHT: ").lower()
+
+        while True:
         
-        if player_input not in moves.keys():
-            if player_input == "":
+            if player_input not in moves.keys():
+                if player_input == "":
 
-                os.system("clear")
-                game.display_print()
-                game.player_interaction()
+                    os.system("clear")
+                    game.display_print()
+                    # game.player_interaction()
+                    player_input: str = input("Next move: ")
 
+                else:
+
+                    print("Please enter w, a, s or d to move!")
+
+                    player_input: str = input("Please enter your move (w = UP, s = DOWN, a = LEFT, d = RIGHT: ").lower()
+
+                    os.system("clear")
+                    game.display_print()
+
+        
             else:
+                x_coordinate: int = snake.head()[0] + moves[player_input][0]
+                y_coordinate: int = snake.head()[1] + moves[player_input][1]
+                head_position: tuple[int] = (x_coordinate,y_coordinate)
 
-                print("Please enter w, a, s or d to move!")
+                # print(f'new position is {head_position}')
 
-                player_input: str = input("Please enter your move (w = UP, s = DOWN, a = LEFT, d = RIGHT: ").lower()
+                self.snake = Snake(snake.move(head_position),moves[player_input]) 
 
                 os.system("clear")
                 game.display_print()
 
-    
-        else:
-            x_coordinate: int = snake.head()[0] + moves[player_input][0]
-            y_coordinate: int = snake.head()[1] + moves[player_input][1]
-            head_position: tuple[int] = (x_coordinate,y_coordinate)
+                # game.player_interaction()
 
-            # print(f'new position is {head_position}')
-
-            self.snake = Snake(snake.move(head_position),moves[player_input]) 
-
-            os.system("clear")
-
-            game.display_print()
-
-            game.player_interaction()
-
-            player_input: str = input("Next move: ")
+                player_input: str = input("Next move: ")
 
 
 
